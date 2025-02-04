@@ -76,7 +76,51 @@ const MenuScreen = () => {
             </div>
 
             <div className="flex m-2 text-2xl">
-              <Space direction="vertical" size={16}>
+              <Space direction="horizontal flex flex-wrap">
+                <Card
+                  size="small"
+                  title={
+                    <>
+                      <h1 className="text-2xl">sandwiches</h1>
+                    </>
+                  }
+                  className="text-left"
+                  style={{ width: 300 }}
+                >
+                  <ul className="list-disc pl-5">
+      <li className="mb-2">
+        <p>Card content</p>
+      </li>
+      <li className="mb-2">
+        <p>Card content</p>
+      </li>
+      <li>
+        <p>Card content</p>
+      </li>
+    </ul>
+                </Card>
+                <Card
+                  size="small"
+                  title={
+                    <>
+                      <h1 className="text-2xl">sandwiches</h1>
+                    </>
+                  }
+                  className="text-left"
+                  style={{ width: 300 }}
+                >
+                  <ul className="list-disc pl-5">
+      <li className="mb-2">
+        <p>Card content</p>
+      </li>
+      <li className="mb-2">
+        <p>Card content</p>
+      </li>
+      <li>
+        <p>Card content</p>
+      </li>
+    </ul>
+                </Card>
                 <Card
                   size="small"
                   title={
