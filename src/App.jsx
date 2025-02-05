@@ -3,6 +3,13 @@ import { Card, Col, Layout, Row, Space, Typography } from "antd";
 import { InfoCircleOutlined } from "@ant-design/icons";
 import logo from "./assets/Untitled-1.png";
 import { Content } from "antd/es/layout/layout";
+import Sandwiches from "./components/sandwiches";
+import Ensaladas from "./components/ensaladas";
+import Promos from "./components/Promos";
+import Panes from "./components/Panes";
+import Proteinas from "./components/Proteinas";
+import Wraps from "./components/Wraps";
+
 
 const { Title } = Typography;
 
@@ -66,83 +73,30 @@ const MenuScreen = () => {
       style={{ minHeight: "100vh", background: "#fff", padding: "20px" }}
     >
       <Content>
-        <Row gutter={[16, 16]} style={{ height: "50vh" }}>
+        <Row gutter={[16, 16]} style={{ height: "48vh" }}>
           <Col
             span={12}
             className="bg-white flex border border-gray-300 rounded-lg text-center text-xl font-bold shadow-md"
           >
-            <div className="flex m-3">
-              <Title level={2}>Sandwiches</Title>
+            <div className="flex m-3 -mt-5 bg-white w-fit">
+              <Title level={2} className="m-2">
+                Sandwiches
+              </Title>
             </div>
 
             <div className="flex m-2 text-2xl">
-              <Space direction="horizontal flex flex-wrap">
-                <Card
-                  size="small"
-                  title={
-                    <>
-                      <h1 className="text-2xl">sandwiches</h1>
-                    </>
-                  }
-                  className="text-left"
-                  style={{ width: 300 }}
-                >
-                  <ul className="list-disc pl-5">
-      <li className="mb-2">
-        <p>Card content</p>
-      </li>
-      <li className="mb-2">
-        <p>Card content</p>
-      </li>
-      <li>
-        <p>Card content</p>
-      </li>
-    </ul>
-                </Card>
-                <Card
-                  size="small"
-                  title={
-                    <>
-                      <h1 className="text-2xl">sandwiches</h1>
-                    </>
-                  }
-                  className="text-left"
-                  style={{ width: 300 }}
-                >
-                  <ul className="list-disc pl-5">
-      <li className="mb-2">
-        <p>Card content</p>
-      </li>
-      <li className="mb-2">
-        <p>Card content</p>
-      </li>
-      <li>
-        <p>Card content</p>
-      </li>
-    </ul>
-                </Card>
-                <Card
-                  size="small"
-                  title={
-                    <>
-                      <h1 className="text-2xl">sandwiches</h1>
-                    </>
-                  }
-                  className="text-left"
-                  style={{ width: 300 }}
-                >
-                  <ul className="list-disc pl-5">
-      <li className="mb-2">
-        <p>Card content</p>
-      </li>
-      <li className="mb-2">
-        <p>Card content</p>
-      </li>
-      <li>
-        <p>Card content</p>
-      </li>
-    </ul>
-                </Card>
+              <Space
+                direction="horizontal"
+                className="flex flex-wrap justify-center"
+              >
+                <Sandwiches />
+                <Sandwiches />
+                <Sandwiches />
+                <Sandwiches />
+                <Sandwiches />
+                <Sandwiches />
+                <Sandwiches />
+                <Sandwiches />
               </Space>
             </div>
           </Col>
@@ -150,48 +104,131 @@ const MenuScreen = () => {
             span={6}
             className="bg-white flex border border-gray-300 rounded-lg text-center text-xl font-bold shadow-md"
           >
-            <div className="flex m-3">
-              <Title level={2}>Ensaladas</Title>
+            <div className="flex m-3 -mt-5 bg-white w-fit">
+              <Title level={2} className="m-2">
+                Ensaladas
+              </Title>
             </div>
-            <div></div>
+
+            <div className="flex m-2 text-xl">
+              <Space
+                direction="horizontal"
+                className="flex flex-wrap justify-center"
+              >
+                <Ensaladas />
+                <Ensaladas />
+                <Ensaladas />
+                <Ensaladas />
+                <Ensaladas />
+                <Ensaladas />
+                <Ensaladas />
+                <Ensaladas />
+                <Ensaladas />
+                <Ensaladas />
+              </Space>
+            </div>
           </Col>
           <Col
             span={6}
             className="bg-white flex border border-gray-300 rounded-lg text-center text-xl font-bold shadow-md"
           >
-            <div className="flex m-3">
-              <Title level={2}>Promos</Title>
+            <div className="flex m-3 -mt-5 bg-white w-fit">
+              <Title level={2} className="m-2">
+                Promos
+              </Title>
             </div>
-            <div></div>
+            <div className="flex m-2 text-2xl">
+              <Space
+                direction="horizontal"
+                className="flex flex-wrap justify-center"
+              >
+                <Promos/>
+                <Promos/>
+                <Promos/>
+                <Promos/>
+                <Promos/>
+                <Promos/>
+                <Promos/>
+                <Promos/>
+              </Space>
+            </div>
           </Col>
         </Row>
-        <Row gutter={[16, 16]} style={{ height: "50vh" }}>
+        <Row gutter={[16, 16]} style={{ height: "48vh" }}>
           <Col
             span={6}
             className="bg-white flex border border-gray-300 rounded-lg text-center text-xl font-bold shadow-md"
           >
-            <div className="flex m-3">
-              <Title level={2}>Panes</Title>
+            <div className="flex m-3 -mt-5 bg-white w-fit">
+              <Title level={2} className="m-2">
+                Panes
+              </Title>
             </div>
-            <div></div>
+            <div className="flex m-2 text-2xl">
+              <Space
+                direction="horizontal"
+                className="flex flex-wrap justify-center"
+              >
+                <Panes/>
+                <Panes/>
+                <Panes/>
+                <Panes/>
+                <Panes/>
+                <Panes/>
+                <Panes/>
+                <Panes/>
+              </Space>
+            </div>
           </Col>
           <Col
             span={6}
             className="bg-white flex border border-gray-300 rounded-lg text-center text-xl font-bold shadow-md"
           >
-            <div className="flex m-3">
-              <Title level={2}>Proteínas</Title>
+            <div className="flex m-3 -mt-5 bg-white w-fit">
+              <Title level={2} className="m-2">
+                Proteinas
+              </Title>
             </div>
-            <div></div>
+            <div className="flex m-2 text-2xl">
+              <Space
+                direction="horizontal"
+                className="flex flex-wrap justify-center"
+              >
+                <Proteinas/>
+                <Proteinas/>
+                <Proteinas/>
+                <Proteinas/>
+                <Proteinas/>
+                <Proteinas/>
+                <Proteinas/>
+                <Proteinas/>
+              </Space>
+            </div>
           </Col>
           <Col
             span={12}
             className="bg-white flex border border-gray-300 rounded-lg text-center text-xl font-bold shadow-md"
           >
-            <div className="flex m-3">
-              <Title level={2}>wraps</Title>
+            <div className="flex m-3 -mt-5 bg-white w-fit">
+              <Title level={2} className="m-2">
+                Wraps
+              </Title>
             </div>
-            <div></div>
+            <div className="flex m-2 text-2xl">
+              <Space
+                direction="horizontal"
+                className="flex flex-wrap justify-center"
+              >
+                <Wraps/>
+                <Wraps/>
+                <Wraps/>
+                <Wraps/>
+                <Wraps/>
+                <Wraps/>
+                <Wraps/>
+                <Wraps/>
+              </Space>
+            </div>
           </Col>
         </Row>
       </Content>
