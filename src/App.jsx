@@ -90,13 +90,7 @@ const MenuScreen = () => {
                 className="flex flex-wrap justify-center"
               >
                 <Sandwiches />
-                <Sandwiches />
-                <Sandwiches />
-                <Sandwiches />
-                <Sandwiches />
-                <Sandwiches />
-                <Sandwiches />
-                <Sandwiches />
+
               </Space>
             </div>
           </Col>
