@@ -42,7 +42,7 @@ function Sandwiches() {
             </div>
             <div className="grid grid-cols-2 gap-x-4 gap-y-2 mt-1 self-baseline">
               {data.ingredientes.map((data,index)=>(
-              <p key={index} className="text-xs mt-0 text-left">{data.ingrediente}</p>
+              <p key={index} className="text-xs mt-0 ">{data.ingrediente}</p>
 
               ))}
             </div>

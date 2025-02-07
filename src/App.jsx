@@ -105,21 +105,7 @@ const MenuScreen = () => {
             </div>
 
             <div className="flex m-2 text-xl">
-              <Space
-                direction="horizontal"
-                className="flex flex-wrap justify-center"
-              >
                 <Ensaladas />
-                <Ensaladas />
-                <Ensaladas />
-                <Ensaladas />
-                <Ensaladas />
-                <Ensaladas />
-                <Ensaladas />
-                <Ensaladas />
-                <Ensaladas />
-                <Ensaladas />
-              </Space>
             </div>
           </Col>
           <Col
@@ -132,19 +118,7 @@ const MenuScreen = () => {
               </Title>
             </div>
             <div className="flex m-2 text-2xl">
-              <Space
-                direction="horizontal"
-                className="flex flex-wrap justify-center"
-              >
                 <Promos/>
-                <Promos/>
-                <Promos/>
-                <Promos/>
-                <Promos/>
-                <Promos/>
-                <Promos/>
-                <Promos/>
-              </Space>
             </div>
           </Col>
         </Row>
@@ -159,19 +133,8 @@ const MenuScreen = () => {
               </Title>
             </div>
             <div className="flex m-2 text-2xl">
-              <Space
-                direction="horizontal"
-                className="flex flex-wrap justify-center"
-              >
+
                 <Panes/>
-                <Panes/>
-                <Panes/>
-                <Panes/>
-                <Panes/>
-                <Panes/>
-                <Panes/>
-                <Panes/>
-              </Space>
             </div>
           </Col>
           <Col
@@ -209,19 +172,7 @@ const MenuScreen = () => {
               </Title>
             </div>
             <div className="flex m-2 text-2xl">
-              <Space
-                direction="horizontal"
-                className="flex flex-wrap justify-center"
-              >
                 <Wraps/>
-                <Wraps/>
-                <Wraps/>
-                <Wraps/>
-                <Wraps/>
-                <Wraps/>
-                <Wraps/>
-                <Wraps/>
-              </Space>
             </div>
           </Col>
         </Row>
