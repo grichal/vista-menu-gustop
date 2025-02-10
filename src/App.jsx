@@ -1,92 +1,125 @@
-import { Layout, Row, Col, Typography } from "antd"
-import { Content } from "antd/es/layout/layout"
-import Sandwiches from "./components/sandwiches"
-import Ensaladas from "./components/ensaladas"
-import Promos from "./components/Promos"
-import Panes from "./components/Panes"
-import Proteinas from "./components/Proteinas"
-import Wraps from "./components/Wraps"
+import React from "react";
+import { Col, Layout, Row, Space, Typography } from "antd";
+import logo from "./assets/Untitled-1.png";
+import background from "./assets/328.jpg";
+import { Content } from "antd/es/layout/layout";
+import Sandwiches from "./components/sandwiches";
+import Ensaladas from "./components/ensaladas";
+import Promos from "./components/Promos";
+import Panes from "./components/Panes";
+import Proteinas from "./components/Proteinas";
+import Wraps from "./components/Wraps";
 
-const { Title } = Typography
+const { Title } = Typography;
+
+// #fffbeb → bg-amber-100
+// #fffbf2 → bg-yellow-100
+// #fffcf3 → bg-yellow-50
+// #fffbf3 → bg-amber-50
+// #fffcec → bg-orange-50
 
 const MenuScreen = () => {
   return (
-    <Layout className="menu-layout">
+    <Layout
+      className="flex flex-wrap-revers"
+      style={{
+        minHeight: "100vh",
+        padding: "20px",
+        backgroundColor: "#fffbeb",
+      }}
+    >
       <Content>
         <Row gutter={[16, 16]} style={{ height: "48vh" }}>
-          <Col span={12} className="menu-card sandwich-card">
-            <Title level={2} className="menu-title text-start">
-              <span role="img" aria-label="sandwich">
-                🥪
-              </span>{" "}
-              Sandwiches
-            </Title>
-            <div className="menu-content">
-              <Sandwiches />
+          <Col
+            span={12}
+            className=" bg-white flex border border-gray-300 rounded-lg text-center text-xl font-bold shadow-md"
+          >
+            <div className="flex m-3 w-fit">
+              <Title level={2}>
+                <p className="m-2 text-yellow-700">🥪 Sandwiches</p>
+              </Title>
+            </div>
+            <div className="flex m-2 text-2xl">
+              <Space
+                direction="horizontal"
+                className="flex flex-wrap justify-center"
+              >
+                <Sandwiches />
+              </Space>
             </div>
           </Col>
-          <Col span={6} className="menu-card salad-card">
-            <Title level={2} className="menu-title">
-              <span role="img" aria-label="salad">
-                🥗
-              </span>{" "}
-              Ensaladas
-            </Title>
-            <div className="menu-content">
+          <Col
+            span={6}
+            className="bg-white flex border border-gray-300 rounded-lg text-center text-xl font-bold shadow-md"
+          >
+            <div className="flex m-3  w-fit">
+              <Title level={2}>
+                <p className="m-2 text-green-600">🥗 Ensaladas</p>
+              </Title>
+            </div>
+
+            <div className="flex m-2 text-xl">
               <Ensaladas />
             </div>
           </Col>
-          <Col span={6} className="menu-card promo-card">
-            <Title level={2} className="menu-title">
-              <span role="img" aria-label="party">
-                🎉
-              </span>{" "}
-              Promos
-            </Title>
-            <div className="menu-content">
+          <Col
+            span={6}
+            className="bg-white flex border border-gray-300 rounded-lg text-center text-xl font-bold shadow-md"
+          >
+            <div className="flex m-3  w-fit">
+              <Title level={2}>
+                <p className="m-2 text-red-500">🎉 Promos</p>
+              </Title>
+            </div>
+            <div className="flex m-2 text-2xl">
               <Promos />
             </div>
           </Col>
         </Row>
         <Row gutter={[16, 16]} style={{ height: "48vh" }}>
-          <Col span={6} className="menu-card bread-card">
-            <Title level={2} className="menu-title">
-              <span role="img" aria-label="bread">
-                🍞
-              </span>{" "}
-              Panes
-            </Title>
-            <div className="menu-content">
+          <Col
+            span={6}
+            className="bg-white flex border border-gray-300 rounded-lg text-center text-xl font-bold shadow-md"
+          >
+            <div className="flex m-3  w-fit">
+              <Title level={2}>
+                <p className="m-2 text-orange-600">🍞 Panes</p>
+              </Title>
+            </div>
+            <div className="flex m-2 text-2xl">
               <Panes />
             </div>
           </Col>
-          <Col span={6} className="menu-card protein-card">
-            <Title level={2} className="menu-title">
-              <span role="img" aria-label="meat">
-                🥩
-              </span>{" "}
-              Proteinas
-            </Title>
-            <div className="menu-content">
+          <Col
+            span={6}
+            className="bg-white flex border border-gray-300 rounded-lg text-center text-xl font-bold shadow-md"
+          >
+            <div className="flex m-3  w-fit">
+              <Title level={2}>
+                <p className="m-2 text-rose-700">🥩 Proteinas</p>
+              </Title>
+            </div>
+            <div className="flex m-2 text-2xl">
               <Proteinas />
             </div>
           </Col>
-          <Col span={12} className="menu-card wrap-card">
-            <Title level={2} className="menu-title">
-              <span role="img" aria-label="wrap">
-                🌯
-              </span>{" "}
-              Wraps
-            </Title>
-            <div className="menu-content">
+          <Col
+            span={12}
+            className="bg-white flex border border-gray-300 rounded-lg text-center text-xl shadow-md"
+          >
+            <div className="flex m-3  w-fit">
+              <Title level={2}>
+                <p className="m-2 text-teal-600">🌯 Wraps</p>
+              </Title>
+            </div>
+            <div className="flex m-2 text-2xl">
               <Wraps />
             </div>
           </Col>
         </Row>
       </Content>
     </Layout>
-  )
-}
+  );
+};
 
-export default MenuScreen
-
+export default MenuScreen;
