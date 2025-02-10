@@ -22,8 +22,8 @@ function Promos() {
   return (
     <Space direction="horizontal" className="flex flex-wrap justify-center">
       {promos.map((data, index) => (
-        <div className="flex mx-3 bg-red-100 rounded-2xl p-2 shadow-md" key={index}>
-          <h1 className="text-center font-bold text-red-800">
+        <div className="flex mx-3 bg-red-100 rounded-md p-2 shadow-md" key={index}>
+          <h1 className="text-base text-center font-bold text-red-800">
             {data.name.toUpperCase()}
           </h1>
 

@@ -29,17 +29,18 @@ const MenuScreen = () => {
       }}
     >
       <Content>
-        <Row gutter={[16, 16]} style={{ height: "48vh" }}>
+        <Row gutter={[16, 16]} style={{ height: "52vh" }}>
           <Col
-            span={12}
+            span={18}
             className=" bg-white flex border border-gray-300 rounded-lg text-center text-xl font-bold shadow-md"
           >
-            <div className="flex m-3 w-fit">
-              <Title level={2}>
+            <div className="flex m-3 justify-between">
+              <Title level={2} className="flex ">
                 <p className="m-2 text-yellow-700">🥪 Sandwiches</p>
               </Title>
+              <img src={logo} className="h-25 mr-10" alt="" />
             </div>
-            <div className="flex m-2 text-2xl">
+            <div className="flex -mt-5 m-2 text-2xl">
               <Space
                 direction="horizontal"
                 className="flex flex-wrap justify-center"
@@ -48,27 +49,15 @@ const MenuScreen = () => {
               </Space>
             </div>
           </Col>
-          <Col
-            span={6}
-            className="bg-white flex border border-gray-300 rounded-lg text-center text-xl font-bold shadow-md"
-          >
-            <div className="flex m-3  w-fit">
-              <Title level={2}>
-                <p className="m-2 text-green-600">🥗 Ensaladas</p>
-              </Title>
-            </div>
 
-            <div className="flex m-2 text-xl">
-              <Ensaladas />
-            </div>
-          </Col>
           <Col
             span={6}
             className="bg-white flex border border-gray-300 rounded-lg text-center text-xl font-bold shadow-md"
           >
-            <div className="flex m-3  w-fit">
-              <Title level={2}>
+            <div className="flex m-3 w-fit">
+              <Title level={2} className="flex">
                 <p className="m-2 text-red-500">🎉 Promos</p>
+                <p className="text-xs m-2 text-red-500 self-center">sandwich + Jugo 16oz</p>
               </Title>
             </div>
             <div className="flex m-2 text-2xl">
@@ -76,7 +65,20 @@ const MenuScreen = () => {
             </div>
           </Col>
         </Row>
-        <Row gutter={[16, 16]} style={{ height: "48vh" }}>
+        <Row gutter={[16, 16]} style={{ height: "44vh" }}>
+          <Col
+            span={6}
+            className="bg-white flex border border-gray-300 rounded-lg text-center text-xl font-bold shadow-md"
+          >
+            <div className="flex m-3">
+              <Title level={2}>
+                <p className="m-2 text-green-600 w-full">🥗 Ensaladas</p>
+              </Title>
+            </div>
+            <div className="flex m-2 text-xl">
+              <Ensaladas />
+            </div>
+          </Col>
           <Col
             span={6}
             className="bg-white flex border border-gray-300 rounded-lg text-center text-xl font-bold shadow-md"
@@ -104,7 +106,7 @@ const MenuScreen = () => {
             </div>
           </Col>
           <Col
-            span={12}
+            span={6}
             className="bg-white flex border border-gray-300 rounded-lg text-center text-xl shadow-md"
           >
             <div className="flex m-3  w-fit">

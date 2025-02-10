@@ -22,9 +22,9 @@ function Sandwiches() {
   return (
     <>
       {" "}
-      <Space direction="horizontal" className="flex flex-wrap justify-center">
+      <Space direction="horizontal" className="flex flex-wrap justify-center mb-5">
         {sandwiches.map((data, index) => (
-          <div className="flex flex-col mx-3 bg-amber-100 rounded-2xl p-2 shadow-md" key={index}>
+          <div className="flex flex-col mx-3 bg-amber-100 rounded-md p-2 shadow-md" key={index}>
             <h1
               className="text-center font-bold text-amber-800
       "
