@@ -26,12 +26,12 @@ function Sandwiches() {
         {sandwiches.map((data, index) => (
           <div className="flex flex-col mx-3" key={index}>
             <h1
-              className="text-base
+              className="text-center font-bold
       "
             >
               {data.nombre.toUpperCase()}
             </h1>
-            <div className="w-full h-[2px] bg-gray-400 my-2"></div>
+            
             <div className="flex self-center">
               <div className="bg-amber-400 rounded-md mx-2">
                 <p className="text-base m-1">${data.price6}</p>
@@ -40,9 +40,11 @@ function Sandwiches() {
                 <p className="text-base m-1">${data.price12}</p>
               </div>
             </div>
+            <div className="w-full h-[2px] bg-gray-400 my-2"></div>
+
             <div className="grid grid-cols-2 gap-x-4 gap-y-2 mt-1 self-baseline">
               {data.ingredientes.map((data,index)=>(
-              <p key={index} className="text-xs mt-0 ">{data.ingrediente}</p>
+              <p key={index} className="text-xs mt-0 text-start">{data.ingrediente}</p>
 
               ))}
             </div>
