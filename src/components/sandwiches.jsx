@@ -23,43 +23,30 @@ function Sandwiches() {
     <>
       {" "}
       <Space direction="horizontal" className="flex flex-wrap justify-center mb-5">
-        {sandwiches.map((data, index) => (
-          <div className="flex flex-col mx-3 bg-amber-100 rounded-md p-2 shadow-md" key={index}>
-            <h1
-              className="text-center font-bold text-amber-800 max-w-3xs text-xl
-      "
-            >
-              {data.nombre.toUpperCase()}
-            </h1>
-            
-            <div className="flex self-center">
-
-            {data.price6 ? (<>
-              <div className="rounded-md bg-amber-600 mx-2">
-                <p className="text-base m-1 text-md font-bold text-yellow-100">${data.price6}</p>
-                <p className="text-xs absolute -my-9 ml-10 bg-yellow-700 p-1 rounded-2xl text-white">6'</p>
-              </div>
-              <div className="rounded-md bg-amber-600 mx-2">
-                <p className="text-base m-1 text-md font-bold text-yellow-100">${data.price12}</p>
-                <p className="text-xs absolute -my-9 ml-10 bg-yellow-700 p-1 rounded-2xl text-white">12'</p>
-              </div></>):(<>
-                <div className="rounded-md bg-amber-600 mx-2">
-                <p className="text-base m-1 text-md font-bold text-yellow-100">${data.price12}</p>
-              </div>
-              </>)}
-
-            </div>
-            <div className="w-full h-[2px] bg-amber-800 my-2"></div>
-
-            <div className="grid grid-cols-2 gap-x-4 gap-y-2 mt-1 self-baseline">
-              {data.ingredientes.map((data,index)=>(
-              <p key={index} className="font-bold text-xs mt-0 text-start text-amber-700">{data.ingrediente.toUpperCase()}</p>
-
-              ))}
-            </div>
-          </div>
+  {sandwiches.map((data, index) => (
+    <div key={index} className="bg-amber-50 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-300 w-70">
+      <div className="flex justify-between items-start mb-2">
+        <h3 className="font-semibold text-amber-900">{data.nombre}</h3>
+        <div className="flex flex-col items-end">
+        {data.price6 ? (<>
+          <span className="text-base font-bold text-amber-600">${data.price6}</span>
+          <span className="text-base font-bold text-amber-600">${data.price12}</span>
+        </>):(<>
+          <span className="text-base font-bold text-amber-600">${data.price12}</span>
+          </>)}
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-x-1">
+        {data.ingredientes.map((item, index) => (
+          <p key={index} className="text-amber-700 text-sm break-words">
+            {item.ingrediente}
+            {index !== data.ingredientes.length - 1 && ","}
+          </p>
         ))}
-      </Space>
+      </div>
+    </div>
+  ))}
+</Space>
     </>
   );
 }

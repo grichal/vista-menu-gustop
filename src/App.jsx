@@ -29,9 +29,9 @@ const MenuScreen = () => {
       }}
     >
       <Content>
-        <Row gutter={[16, 16]} style={{ height: "58vh" }}>
+        <Row gutter={[16, 16]} style={{ height: "62vh" }}>
           <Col
-            span={18}
+            span={19}
             className=" bg-white flex border border-gray-300 rounded-lg text-center text-xl font-bold shadow-md"
           >
             <div className="flex m-3 justify-between">
@@ -51,8 +51,8 @@ const MenuScreen = () => {
           </Col>
 
           <Col
-            span={6}
-            className="bg-white flex border border-gray-300 rounded-lg text-center text-xl font-bold shadow-md"
+            span={5}
+            className="bg-white flex border border-gray-300 rounded-lg text-center text-xl font-bold shadow-md w-full"
           >
             <div className="flex m-3  w-fit">
               <Title level={2}>
@@ -62,10 +62,9 @@ const MenuScreen = () => {
             <div className="flex m-2 text-2xl">
               <Wraps />
             </div>
-            
           </Col>
         </Row>
-        <Row gutter={[16, 16]} style={{ height: "38vh" }}>
+        <Row gutter={[16, 16]} style={{ height: "34vh" }}>
           <Col
             span={6}
             className="bg-white flex border border-gray-300 rounded-lg text-center text-xl font-bold shadow-md"
