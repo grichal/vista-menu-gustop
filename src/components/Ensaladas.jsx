@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getEnsaladas } from "../firebase/api";
 import { Space } from "antd";
 
-function Ensaladas() {
+const Ensaladas=()=> {
   const [ensaladas, setEnsaladas] = useState([]);
 
   useEffect(() => {

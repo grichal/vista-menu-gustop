@@ -4,7 +4,7 @@ import logo from "./assets/Untitled-1.png";
 import background from "./assets/328.jpg";
 import { Content } from "antd/es/layout/layout";
 import Sandwiches from "./components/sandwiches";
-import Ensaladas from "./components/ensaladas";
+import Ensaladas from "./components/Ensaladas"
 import Promos from "./components/Promos";
 import Panes from "./components/Panes";
 import Proteinas from "./components/Proteinas";
