@@ -1,54 +1,78 @@
-import React, { useState, useEffect } from "react";
-import { getSandwiches } from "../firebase/api";
-import { Space } from "antd";
+"use client"
+
+import { useState, useEffect } from "react"
+import { getSandwiches } from "../firebase/api"
+import { Space, Badge } from "antd"
 
 function Sandwiches() {
-  const [sandwiches, setSandwiches] = useState([]);
+  const [sandwiches, setSandwiches] = useState([])
 
   useEffect(() => {
     const getdata = async () => {
       try {
-        const data = await getSandwiches();
-        setSandwiches(data);
-        console.log(data);
+        const data = await getSandwiches()
+        setSandwiches(data)
+        console.log(data)
       } catch (error) {
-        console.error("error loading data", error);
-        throw error;
+        console.error("error loading data", error)
+        throw error
       }
-    };
-    getdata();
-  }, []);
+    }
+    getdata()
+  }, [])
 
   return (
-    <>
-      {" "}
-      <Space direction="horizontal" className="flex flex-wrap justify-center mb-5">
-  {sandwiches.map((data, index) => (
-    <div key={index} className="bg-amber-50 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-300 w-70">
-      <div className="flex justify-between items-start mb-2">
-        <h3 className="font-semibold text-amber-900">{data.nombre}</h3>
-        <div className="flex flex-col items-end">
-        {data.price6 ? (<>
-          <span className="text-base font-bold text-amber-600">${data.price6}</span>
-          <span className="text-base font-bold text-amber-600">${data.price12}</span>
-        </>):(<>
-          <span className="text-base font-bold text-amber-600">${data.price12}</span>
-          </>)}
-        </div>
-      </div>
-      <div className="flex flex-wrap gap-x-1">
-        {data.ingredientes.map((item, index) => (
-          <p key={index} className="text-amber-700 text-sm break-words">
-            {item.ingrediente}
-            {index !== data.ingredientes.length - 1 && ","}
-          </p>
+    <div className="container mx-auto px-4 py-8">
+      <Space direction="horizontal" className="flex flex-wrap justify-center gap-6">
+        {sandwiches.map((data, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 w-64 border border-amber-100"
+          >
+            {/* Image container with fixed height */}
+            <div className="h-40 overflow-hidden relative">
+              {data.imageUrl ? (
+                <img
+                  src={data.imageUrl || "/placeholder.svg"}
+                  alt={data.nombre}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="w-full h-full bg-amber-100 flex items-center justify-center">
+                  <span className="text-amber-800">No image available</span>
+                </div>
+              )}
+              {/* Price badge */}
+              <div className="absolute top-3 right-3 flex flex-col gap-1">
+                {data.price6 ? (
+                  <>
+                    <Badge.Ribbon text={`$${data.price8 || data.price6}`} color="#f59e0b" className="font-bold" />
+                    <Badge.Ribbon text={`$${data.price12}`} color="#d97706" className="font-bold mt-6" />
+                  </>
+                ) : (
+                  <Badge.Ribbon text={`$${data.price12}`} color="#d97706" className="font-bold" />
+                )}
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="p-4">
+              <h3 className="font-bold text-lg text-amber-900 mb-2 truncate">{data.nombre}</h3>
+
+              <div className="flex flex-wrap gap-1 text-sm">
+                {data.ingredientes.map((item, index) => (
+                  <span key={index} className="inline-block bg-amber-50 text-amber-700 px-2 py-1 rounded-full text-xs">
+                    {item.ingrediente}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
         ))}
-      </div>
+      </Space>
     </div>
-  ))}
-</Space>
-    </>
-  );
+  )
 }
 
-export default Sandwiches;
+export default Sandwiches
+
