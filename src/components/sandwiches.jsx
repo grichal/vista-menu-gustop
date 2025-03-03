@@ -1,78 +1,102 @@
-"use client"
+import { useState, useEffect } from "react";
+import { getSandwiches } from "../firebase/api";
+import { Card, Tag, Typography, Divider, Space, Carousel } from "antd";
+import { Image } from "antd";
 
-import { useState, useEffect } from "react"
-import { getSandwiches } from "../firebase/api"
-import { Space, Badge } from "antd"
+const { Title, Text } = Typography;
 
-function Sandwiches() {
-  const [sandwiches, setSandwiches] = useState([])
+const Sandwiches = () => {
+  const [sandwiches, setSandwiches] = useState([]);
 
   useEffect(() => {
     const getdata = async () => {
       try {
-        const data = await getSandwiches()
-        setSandwiches(data)
-        console.log(data)
+        const data = await getSandwiches();
+        setSandwiches(data);
+        console.log(data);
       } catch (error) {
-        console.error("error loading data", error)
-        throw error
+        console.error("error loading data", error);
+        throw error;
       }
-    }
-    getdata()
-  }, [])
+    };
+    getdata();
+  }, []);
+
+  // Función para dividir el array en grupos de 4
+  const chunkArray = (array, size) => {
+    return Array.from({ length: Math.ceil(array.length / size) }, (_, i) =>
+      array.slice(i * size, i * size + size)
+    );
+  };
+
+  // Agrupamos los sándwiches en páginas de 4 elementos
+  const sandwichPages = chunkArray(sandwiches, 4);
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <Space direction="horizontal" className="flex flex-wrap justify-center gap-6">
-        {sandwiches.map((data, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 w-64 border border-amber-100"
-          >
-            {/* Image container with fixed height */}
-            <div className="h-40 overflow-hidden relative">
-              {data.imageUrl ? (
-                <img
-                  src={data.imageUrl || "/placeholder.svg"}
-                  alt={data.nombre}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <div className="w-full h-full bg-amber-100 flex items-center justify-center">
-                  <span className="text-amber-800">No image available</span>
-                </div>
-              )}
-              {/* Price badge */}
-              <div className="absolute top-3 right-3 flex flex-col gap-1">
-                {data.price6 ? (
-                  <>
-                    <Badge.Ribbon text={`$${data.price8 || data.price6}`} color="#f59e0b" className="font-bold" />
-                    <Badge.Ribbon text={`$${data.price12}`} color="#d97706" className="font-bold mt-6" />
-                  </>
-                ) : (
-                  <Badge.Ribbon text={`$${data.price12}`} color="#d97706" className="font-bold" />
-                )}
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="p-4">
-              <h3 className="font-bold text-lg text-amber-900 mb-2 truncate">{data.nombre}</h3>
-
-              <div className="flex flex-wrap gap-1 text-sm">
-                {data.ingredientes.map((item, index) => (
-                  <span key={index} className="inline-block bg-amber-50 text-amber-700 px-2 py-1 rounded-full text-xs">
-                    {item.ingrediente}
-                  </span>
-                ))}
-              </div>
-            </div>
+    <div className="container mx-full px-4 py-8">
+      <Carousel  autoplay autoplaySpeed={5000} dots={{ className: "custom-dots" }} className="[&_.slick-dots_li]:bg-gray-500 [&_.slick-dots_.slick-active]:bg-yellow-400">
+        {sandwichPages.map((page, pageIndex) => (
+          <div key={pageIndex}>
+            <Space
+              direction="horizontal"
+              size="large"
+              className="flex justify-center gap-6"
+            >
+              {page.map((data, index) => (
+                <Card
+                  key={index}
+                  hoverable
+                  className="w-full max-w-xs max-h-xm overflow-hidden"
+                  cover={
+                    <div className="relative h-40 overflow-hidden">
+                      <Image
+                        src={data.imagen || "/placeholder.svg"}
+                        preview={false}
+                        className="w-full h-full object-cover"
+                      />
+                      <Title
+                        level={4}
+                        className="absolute bottom-2 left-2 !text-white !m-0"
+                        style={{ color: "white" }}
+                      >
+                        {data.nombre.toUpperCase()}
+                      </Title>
+                    </div>
+                  }
+                >
+                  <div className="mb-3">
+                    {data.ingredientes.map((ingredient, index) => (
+                      <Tag key={index} className="mr-1 mb-1">
+                        {ingredient.ingrediente}
+                      </Tag>
+                    ))}
+                  </div>
+                  <Divider className="my-2" />
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <Text type="secondary" className="text-xs">
+                        Tamaño 8"
+                      </Text>
+                      <br />
+                      <Text strong>${data.price6}</Text>
+                    </div>
+                    <Divider type="vertical" className="h-8" />
+                    <div>
+                      <Text type="secondary" className="text-xs">
+                        Tamaño 12"
+                      </Text>
+                      <br />
+                      <Text strong>${data.price12}</Text>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </Space>
           </div>
         ))}
-      </Space>
+      </Carousel>
     </div>
-  )
-}
+  );
+};
 
-export default Sandwiches
-
+export default Sandwiches;
