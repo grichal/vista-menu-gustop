@@ -41,12 +41,8 @@ const MenuScreen = () => {
               <img src={logo} className="h-25 mr-10" alt="" />
             </div>
             <div className="flex -mt-5 m-2 text-2xl">
-              <Space
-                direction="horizontal"
-                className="flex flex-wrap justify-center"
-              >
+
                 <Sandwiches />
-              </Space>
             </div>
           </Col>
 
